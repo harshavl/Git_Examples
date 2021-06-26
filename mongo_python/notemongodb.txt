@@ -1,0 +1,47 @@
+
+# windows
+mongo
+
+# linux
+mongod
+
+
+
+-----------
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+> use fullstack
+switched to db fullstack
+> show collections
+> db.students.insert({ 'name': 'harsha', 'mark': 99 } )
+WriteResult({ "nInserted" : 1 })
+> db.students.find({})
+{ "_id" : ObjectId("6039f84a153cce4ea38f603f"), "name" : "harsha", "mark" : 99 }
+>
+> dn.students.insert({ 'item': 'Chair', 'price': 999, 'age': 25 } )
+2021-02-27T13:15:42.090+0530 E QUERY    [js] ReferenceError: dn is not defined :
+@(shell):1:1
+>
+> db.students.insert({ 'item': 'Chair', 'price': 999, 'age': 25 } )
+WriteResult({ "nInserted" : 1 })
+>
+> db.students.find({})
+{ "_id" : ObjectId("6039f84a153cce4ea38f603f"), "name" : "harsha", "mark" : 99 }
+{ "_id" : ObjectId("6039f8b7153cce4ea38f6040"), "item" : "Chair", "price" : 999, "age" : 25 }
+>
+> db.students.remove({ 'price': 999 } )
+WriteResult({ "nRemoved" : 1 })
+>
+> db.students.find({})
+{ "_id" : ObjectId("6039f84a153cce4ea38f603f"), "name" : "harsha", "mark" : 99 }
+> show dbs
+admin      0.000GB
+config     0.000GB
+fullstack  0.000GB
+local      0.000GB
+> show collections
+students
+>
+-----------
